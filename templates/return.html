@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlastiScan - Resultados</title>
+</head>
+<body>
+    <h2>Resultados</h2>
+    <p>Archivo procesado: {{ filename }}</p>
+    <p>Forma: {{ prediction.forma.nombre }} (Probabilidad: {{ prediction.forma.probabilidad }})</p>
+    <p>Color: {{ prediction.color.nombre }} (Probabilidad: {{ prediction.color.probabilidad }})</p>
+    <p>Componente: {{ prediction.componente.nombre }} (Probabilidad: {{ prediction.componente.probabilidad }})</p>
+    <p>Categoría: {{ prediction.categoria.nombre }} (Probabilidad: {{ prediction.categoria.probabilidad }})</p>
+    <a href="{{ url_for('clear_memory') }}">Volver al Inicio y Limpiar Memoria</a>
+</body>
+</html>

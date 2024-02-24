@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/static/imagenes/plastiscan.png" type="image/x-icon">
+    <meta name="description"
+        content="Esta web está dedicada a informar sobre el proyecto Plastiscan, creado por Minerva Dev Team, que consiste en identificar y clasificar microplásticos en imagenes de muestra, gracias a un modelo de IA preentrenado.Este proyecto es nuestro trabajo final del curso de diploma universitario en Inteligencia Artificial Avanzada en el programa de Samsung Innovation Campus junto la Universidad de Málaga.">
+    <meta name="keywords"
+        content="Plastiscan, UMA, Samsung, IA, microplásticos, Inteligencia Artififial, Proyecto, MinervaDevTeam, Samsung Innovation Campus">
+    <link rel="canonical" href="https://plastiscan.org">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="preload" href="/font/CodecColdTrial-ExtraBold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/font/CodecColdTrial-ExtraBold.woff" as="font" type="font/woff" crossorigin>
+    <link rel="apple-touch-icon" href="/static/imagenes/plastiscan.png">
+    <title>Proyecto PlastiScan</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+
+<body>
+    <header>
+        <img class="minerva-logo" src="/static/imagenes/minervaLOGO.png" alt="logo de Minerva Dev Team">
+        <button class="abrir-menu" id="abrir"><i class="bi bi-list"></i></button>
+        <nav class="nav" id="nav">
+            <button class="cerrar-menu" id="cerrar"><i class="bi bi-x-lg"></i></button>
+            <ul class="nav-links">
+                <li><a href="#nuestro-proyecto" title="Ir a la sección Proyecto">Proyecto</a></li>
+                <li><a href="#pruebalo" title="Ir a la sección Pruébalo">Pruébalo</a></li>
+                <li><a href="#nosotras" title="Ir a la sección Nosotras">Nosotras</a></li>
+                <li><a href="#contacto" title="Ir a la sección de Contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="inicio">
+        <h1>Unlock the ocean secrets</h1>
+        <p>Descubre y clasifica los microplásticos con nuestra aplicación.<br/>
+            ¡Por un mundo sin contaminación!</p>
+    </section>
+    <main>
+        <section id="nuestro-proyecto" class="seccion-principal">
+            <h2 class = "proyecto-h2">NUESTRO PROYECTO</h2>
+            <article class="proyecto">
+                <picture class="picture-proyecto">
+                    <img class = "imagen1" src="/static/imagenes/image.png" alt="Imagen de un planeta con contaminación en los océanos">
+                </picture>
+                <p>
+                    La contaminación del océano es una crisis global que requiere atención inmediata y medidas
+                    significativas para preservar la salud de nuestros mares y la biodiversidad marina. 
+                    La problemática de los microplásticos se ha convertido en un problema que demanda una respuesta inmediata y acciones concretas para preservar la pureza de nuestros océanos. 
+                    En los últimos años, hemos sido testigos de un aumento alarmante en la presencia de diminutas partículas plásticas dispersas por los mares, representando una amenaza directa para la vida marina
+                    y, en última instancia, para la salud del ecosistema acuático.<br/>
+                    La magnitud de este problema se hace evidente al descubrir concentraciones significativas de microplásticos, tanto en la superficie del agua como en las profundidades marinas.<br/>
+                    Estos microplásticos resultan de la descomposición de elementos plásticos más grandes y de la liberación de microesferas presentes en productos de cuidado personal, difundiéndose por los océanos. 
+                    Su persistencia y capacidad para acumular contaminantes químicos las convierten en una amenaza especialmente peligrosa para la vida marina.
+                    La educación y la concienciación pública desempeñan un papel fundamental en la lucha contra la contaminación del océano.
+                </p>
+                
+            </article>
+
+            <article class="proyecto plastiscan">
+                <picture class = "picture-plastiscan">
+                    <img class = "logo" src="/static/imagenes/plastiscan_logo.png" title="PlastiScan Logo"
+                        alt="imagen del logo de PlastiScan">
+                </picture>
+                <div class="div-plastiscan">
+                    <h3>PLASTISCAN</h3>
+                    <p>
+                        El propósito de nuestra iniciativa es desarrollar un sistema de IA integrando un modelo de
+                        aprendizaje profundo,
+                        a través del análisis exploratorio de datos y el filtrado de imágenes, Plastiscan ayuda a
+                        identificar y clasificar
+                        distintos tipos de microplásticos en el entorno marino presente en las imágenes aportadas.
+                    </p>
+                </div>
+            </article>
+
+            <article class="proyecto aplicaciones">
+                <h3>APLICACIONES</h3>
+                <ul>
+                    <li>Esfuerzos de limpieza de océanos: Permite identificar y localizar la contaminación por
+                        microplásticos en muestras de agua del océano.</li>
+                    <li>Mejoras en Instalaciones de reciclaje: identificar y clasificar los residuos de microplásticos
+                        en los materiales, asegurando su adecuada eliminación o tratamiento.</li>
+                    <li>Investigación de microplásticos: estudio del impacto de los microplásticos en los ecosistemas y
+                        la salud humana al automatizar la detección y el análisis de microplásticos en diversas muestras
+                        como agua, suelo o aire.</li>
+                    <li>Educación y concienciación: Desarrollar una aplicación móvil utilizando el modelo que permita a
+                        los usuarios identificar la posible contaminación por microplásticos en productos de consumo.
+                    </li>
+                </ul>
+            </article>
+        </section>
+        <section id="pruebalo" class="seccion-principal">
+            <h2>SUBE TU ARCHIVO</h2>
+            <p>Realiza una prueba sin compromiso de nuestro sistema. Sube una imagen de muestra y será procesada por nuestro
+                modelo.</p>
+            <div class="subir-archivo">
+                <form id="predictForm" enctype="multipart/form-data">
+                    <input type="file" name="image" id="imageInput">
+                    <button type="button" onclick="submitForm()">Subir Imagen</button>
+                </form>
+            </div>
+        
+        </section>
+
+        <section id="nosotras" class="seccion-principal">
+            <h2>NOSOTRAS</h2>
+            <p>
+                Somos <span class="texto-resaltado">Minerva Dev Team</span>.<br/>Elegimos este nombre porque en la
+                mitología romana, Minerva es la diosa de la sabiduría, las artes, la
+                estrategia, la justicia, la educación y el desarrollo.<br/>
+                Es considerada una de las principales deidades femeninas del panteón romano.
+                Admiramos la figura de esta diosa en las leyendas y mitos de la antigua Roma, en la cual se le atribuyen
+                importantes méritos como
+                la educación de Rómulo y Remo, los fundadores de la ciudad.
+            </p>
+
+            <picture class = "nosotras-img">
+                <img src="/static/imagenes/nosotras.png" alt="Minerva Dev Team">
+            </picture>
+
+        </section>
+
+        <section id="contacto" class="seccion-principal">
+            <h2>CONTACTO</h2>
+
+            <section class = "seccion-email">
+                <p>
+                    Puedes contactar con nosotras escribiéndonos un email a esta dirección, o bien a través del
+                    formulario más abajo:
+                </p>
+                <div class = "contenedor-email">
+                    <label for="email-copia">Email:</label>
+                    <a href="mailto:hola@plastiscan.org">hola@plastiscan.org</a> 
+                    <button id = "boton-mail" title="Copiar Email" onclick="copiarEmail()"><img src="/static/imagenes/copy.png"
+                            alt="imagen portapapeles"></button>
+                </div>
+            </section>
+
+            <section class = "formulario">
+                <div class= "formulario-div">
+                    <form action="/templates/enviarMail.php" method="post">
+                        <label for="nombre">Nombre completo:</label>
+                        <input type="text" id="nombre" name="nombre" maxlength="80" required>
+
+                        <label for="email">Email de contacto:</label>
+                        <input type="text" id="email" name="email" required>
+
+                        <label for="asunto">Asunto:</label>
+                        <input type="text" id="asunto" name="asunto" required>
+
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea id="mensaje" name="mensaje" cols="50" rows="20" maxlength="400" required></textarea>
+
+                        <input type="submit" value="Enviar">
+                    </form>
+                </div>
+                <picture class="picture-formulario">
+                    <img class = "minerva-logo" src="/static/imagenes/minervaICON.png" alt="imagen logotipo de minerva dev team">
+                </picture>
+            </section>
+    </main>
+    <footer>
+        <p>&copy; Minerva Dev Team 2024</p>
+        <nav class = "redes">
+            <ul>
+                <li><a href="mailto:hola@plastiscan.org"><i class="bi bi-envelope-at-fill"> contacta </i></a></li>
+                <li><a href=""><i class="bi bi-github"></i></a></li>
+            </ul>
+        </nav>
+    </footer>
+    
+    <script src="/static/js/main.js"></script>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W1LPDN3J1T"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-W1LPDN3J1T');
+    </script>
+
+</body>
+
+</html>
