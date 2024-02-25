@@ -3,11 +3,12 @@ import os
 import tensorflow as tf
 from PIL import Image
 import numpy as np
+from flask_mail import Mail, Message
 
 app = Flask(__name__)
 
 # Cargar el modelo directamente
-plastiscan = tf.keras.models.load_model('PlastiScan_V1.5 json - CNN.h5')
+plastiscan = tf.keras.models.load_model('plastiScan_app.h5')
 
 # Mapeo para la clasificación
 mapeo_forma = ['Fibra', 'Fragmento', 'Lámina']
@@ -60,6 +61,10 @@ def obtener_etiquetas_salida_con_probabilidad(prediccion, mapeo_forma, mapeo_col
 def index():
     return render_template('index.html')
 
+@app.route('/volver')
+def volver():
+    return redirect(url_for('index', _anchor='pruebalo'))
+
 @app.route('/predict', methods=['POST'])
 def predict():
     try:
@@ -69,30 +74,25 @@ def predict():
 
         file = request.files['file']
 
-        # Verificar si se ha seleccionado un archivo
         if file.filename == '':
             return jsonify({'error': 'No se seleccionó ningún archivo'})
 
-        # Verificar la extensión del archivo (puedes ajustar esto según tus necesidades)
-        if not file.filename.lower().endswith(('.png', '.jpg', '.jpeg', '.gif')):
+        
+        if not file.filename.lower().endswith(('.png', '.jpg', '.jpeg', '.gif','.svg')):
             return jsonify({'error': 'Extensión de archivo no permitida'})
 
         # Guardar el archivo en la carpeta de carga
         file_path = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
         file.save(file_path)
 
-        # Cargar y preprocesar la imagen
+        
         img_preprocesada = cargar_y_preprocesar_imagen(file_path)
-
-        # Realizar la predicción
         predicciones = plastiscan.predict(img_preprocesada)
-
-        # Obtener las etiquetas de salida con probabilidades
         forma, color, componente, categoria = obtener_etiquetas_salida_con_probabilidad(
             predicciones, mapeo_forma, mapeo_color, mapeo_componente, mapeo_categoria
         )
 
-        # Guardar los resultados en un diccionario
+        # Guardo los resultados 
         resultados_dict = {
             "forma": forma,
             "color": color,
@@ -101,17 +101,42 @@ def predict():
         }
 
         # Devolver la predicción como JSON
-        return render_template('results.html', filename=file.filename, prediction=resultados_dict)
+        return render_template('resultados.html', filename=file.filename, resultados=resultados_dict)
 
     except Exception as e:
         return jsonify({'error': str(e)})
 
 @app.route('/clear_memory')
 def clear_memory():
-    # Limpiar la variable global de resultados de predicción
+    
     global resultados_prediccion
     resultados_prediccion = None
     return redirect(url_for('index'))
+
+# Configuración de Flask-Mail
+app.config['MAIL_SERVER'] = 'smtp.tu-servidor.com'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USERNAME'] = 'hola@plastiscan.org'  
+
+mail = Mail(app)
+
+@app.route('/contacto', methods=['POST'])
+def contacto():
+    nombre = request.form['nombre']
+    email = request.form['email']
+    asunto = request.form['asunto']
+    mensaje = request.form['mensaje']
+
+    if not nombre or not email or not asunto or not mensaje:
+        return render_template('error.html', mensaje='Revisa los campos, faltan datos')
+
+    msg = Message(asunto, sender='tu-correo@ejemplo.com', recipients=['destinatario@ejemplo.com'])
+    msg.body = f'Nombre: {nombre}\nMensaje: {mensaje}'
+    mail.send(msg)
+
+    return render_template('exito.html', mensaje='Mensaje enviado correctamente')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
