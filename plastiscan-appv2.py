@@ -53,17 +53,20 @@ def obtener_etiquetas_salida_con_probabilidad(prediccion, mapeo_forma, mapeo_col
 def home():
     return render_template('index.html')
 
-@app.route('/pruebalo', methods=['POST'])
+@app.route('/pruebalo', methods=['GET','POST'])
 def pruebalo():
-    if 'file' not in request.files:
-        return 'No se encontró ningún archivo'
-    file = request.files['file']
-    if file.filename == '':
-        return 'No se seleccionó ningún archivo'
-    if file:
-        filename = secure_filename(file.filename)
-        file.save(os.path.join('intranet/uploads', filename))
-        return procesar_imagen(filename)
+    if request.method == 'POST':
+        if 'file' not in request.files:
+            return 'No se encontró ningún archivo'
+        file = request.files['file']
+        if file.filename == '':
+            return 'No se seleccionó ningún archivo'
+        if file:
+            filename = secure_filename(file.filename)
+            file.save(os.path.join('intranet/uploads', filename))
+            return procesar_imagen(filename)
+    else:
+        return render_template('pruebalo.html')
 
 def procesar_imagen(filename):
     image_path = os.path.join('intranet/uploads', filename)
