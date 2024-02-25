@@ -107,10 +107,9 @@
             <div class="subir-archivo">
                 <form action="/predict" method="post" enctype="multipart/form-data">
                     <input type="file" name="file" accept=".png, .jpg, .jpeg, .gif" required>
-                    <button type="submit">Predecir</button>
+                    <button type="submit" class="btn btn-outline-success">Predecir</button>
                 </form>
             </div>
-        
         </section>
 
         <section id="nosotras" class="seccion-principal">
@@ -149,7 +148,7 @@
 
             <section class = "formulario">
                 <div class= "formulario-div">
-                    <form action="/templates/enviarMail.php" method="post">
+                    <form action="/contacto" method="post">
                         <label for="nombre">Nombre completo:</label>
                         <input type="text" id="nombre" name="nombre" maxlength="80" required>
 
