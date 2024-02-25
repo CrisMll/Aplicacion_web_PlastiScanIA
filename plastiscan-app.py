@@ -9,12 +9,13 @@ import json
 app = Flask(__name__)
 model = load_model('plastiscan-app.h5')
 
-mapeo_forma = ['Fibra', 'Fragmento', 'Lámina']
-mapeo_color = ['Blanco', 'Negro', 'Azul', 'Marrón', 'Verde', 'Multicolor', 'Rojo', 'Transparente', 'Amarillo']
-mapeo_componente = ['No Plástico', 'Nylon', 'PE', 'PET', 'PP', 'PS', 'Otros']
-mapeo_categoria = ['Macroplástico', 'Mesoplástico', 'Microplástico']
+
 
 def cargar_y_preprocesar_imagen(imagen_path, target_size=(299, 299)):
+    mapeo_forma = ['Fibra', 'Fragmento', 'Lámina']
+    mapeo_color = ['Blanco', 'Negro', 'Azul', 'Marrón', 'Verde', 'Multicolor', 'Rojo', 'Transparente', 'Amarillo']
+    mapeo_componente = ['No Plástico', 'Nylon', 'PE', 'PET', 'PP', 'PS', 'Otros']
+    mapeo_categoria = ['Macroplástico', 'Mesoplástico', 'Microplástico']
     img = image.load_img(imagen_path, target_size=target_size)
     img_array = image.img_to_array(img)
     img_array_expanded = np.expand_dims(img_array, axis=0)
