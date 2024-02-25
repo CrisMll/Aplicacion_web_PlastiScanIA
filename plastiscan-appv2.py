@@ -7,12 +7,7 @@ import os
 import json
 
 app = Flask(__name__)
-model = load_model('plastiscan-app.h5')
-
-mapeo_forma = ['Fibra', 'Fragmento', 'Lámina']
-mapeo_color = ['Blanco', 'Negro', 'Azul', 'Marrón', 'Verde', 'Multicolor', 'Rojo', 'Transparente', 'Amarillo']
-mapeo_componente = ['No Plástico', 'Nylon', 'PE', 'PET', 'PP', 'PS', 'Otros']
-mapeo_categoria = ['Macroplástico', 'Mesoplástico', 'Microplástico']
+model = load_model('plastiScan_app.h5')
 
 def cargar_y_preprocesar_imagen(imagen_path, target_size=(299, 299)):
     img = image.load_img(imagen_path, target_size=target_size)
@@ -21,6 +16,10 @@ def cargar_y_preprocesar_imagen(imagen_path, target_size=(299, 299)):
     return img_array_expanded / 255.0
 
 def obtener_etiquetas_salida_con_probabilidad(prediccion, mapeo_forma, mapeo_color, mapeo_componente, mapeo_categoria):
+    mapeo_forma = ['Fibra', 'Fragmento', 'Lámina']
+    mapeo_color = ['Blanco', 'Negro', 'Azul', 'Marrón', 'Verde', 'Multicolor', 'Rojo', 'Transparente', 'Amarillo']
+    mapeo_componente = ['No Plástico', 'Nylon', 'PE', 'PET', 'PP', 'PS', 'Otros']
+    mapeo_categoria = ['Macroplástico', 'Mesoplástico', 'Microplástico']
     forma_idx = np.argmax(prediccion[0])
     color_idx = np.argmax(prediccion[1])
     componente_idx = np.argmax(prediccion[2])
@@ -49,6 +48,10 @@ def obtener_etiquetas_salida_con_probabilidad(prediccion, mapeo_forma, mapeo_col
     }
     
     return forma, color, componente, categoria
+
+@app.route('/')
+def home():
+    return render_template('index.html')
 
 @app.route('/pruebalo', methods=['POST'])
 def pruebalo():
