@@ -7,6 +7,7 @@ import os
 import json
 
 app = Flask(__name__)
+application = app
 model = load_model('plastiscan-app.h5')
 
 
