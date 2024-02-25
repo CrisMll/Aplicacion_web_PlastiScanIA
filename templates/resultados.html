@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultados</title>
+</head>
+<body>
+    <h1>Resultados de la predicción</h1>
+    <h2>Forma</h2>
+    <p>Nombre: {{ resultados.forma.nombre }}</p>
+    <p>Probabilidad: {{ resultados.forma.probabilidad }}</p>
+
+    <h2>Color</h2>
+    <p>Nombre: {{ resultados.color.nombre }}</p>
+    <p>Probabilidad: {{ resultados.color.probabilidad }}</p>
+
+    <h2>Componente</h2>
+    <p>Nombre: {{ resultados.componente.nombre }}</p>
+    <p>Probabilidad: {{ resultados.componente.probabilidad }}</p>
+
+    <h2>Categoría</h2>
+    <p>Nombre: {{ resultados.categoria.nombre }}</p>
+    <p>Probabilidad: {{ resultados.categoria.probabilidad }}</p>
+
+    <button onclick="resetear()">Volver a Prueba</button>
+
+    <script>
+        function resetear() {
+            window.location.href = "/pruebalo";
+            location.reload();
+        }
+    </script>
+</body>
+</html>
