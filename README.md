@@ -22,6 +22,8 @@ Además de la creación y entrenamiento del modelo, decidimos integrarlo en una 
  - **JavaScript**
  - **Flask para la carga y procesamiento del modelo y la creación de la app web.**
 
+*El archivo del modelo entrenado que carga la app, por superar el tamaño (400mb), Github no permite subirlo*
+
 
 
 ## 🔗 Contacto
