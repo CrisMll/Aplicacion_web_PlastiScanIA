@@ -3,9 +3,9 @@ import os
 import tensorflow as tf
 from PIL import Image
 import numpy as np
-from flask_mail import Mail, Message
 
 app = Flask(__name__)
+application = app
 
 # Cargar el modelo directamente
 plastiscan = tf.keras.models.load_model('plastiScan_app.h5')
@@ -113,30 +113,8 @@ def clear_memory():
     resultados_prediccion = None
     return redirect(url_for('index'))
 
-# Configuración de Flask-Mail
-app.config['MAIL_SERVER'] = 'smtp.tu-servidor.com'
-app.config['MAIL_PORT'] = 587
-app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = 'hola@plastiscan.org'  
 
-mail = Mail(app)
-
-@app.route('/contacto', methods=['POST'])
-def contacto():
-    nombre = request.form['nombre']
-    email = request.form['email']
-    asunto = request.form['asunto']
-    mensaje = request.form['mensaje']
-
-    if not nombre or not email or not asunto or not mensaje:
-        return render_template('error.html', mensaje='Revisa los campos, faltan datos')
-
-    msg = Message(asunto, sender='tu-correo@ejemplo.com', recipients=['destinatario@ejemplo.com'])
-    msg.body = f'Nombre: {nombre}\nMensaje: {mensaje}'
-    mail.send(msg)
-
-    return render_template('exito.html', mensaje='Mensaje enviado correctamente')
-
-
+'''
 if __name__ == '__main__':
     app.run(debug=True)
+'''
