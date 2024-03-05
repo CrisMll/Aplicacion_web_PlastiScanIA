@@ -5,6 +5,7 @@
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
+    scrollbar-width: auto; 
 }
 
 input[type="checkbox"]{
@@ -15,24 +16,30 @@ li {
 }
 
 body::-webkit-scrollbar {
-    width: 13px;
+    width: 8px;
+    background-color: transparent; 
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent; 
 }
 
 body::-webkit-scrollbar-thumb {
-    background-color: #cfd1d3;
-    border-radius: 0.8rem;
-    transition-duration: 0.8s;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+    transition-duration: .8s;
 }
 
 body::-webkit-scrollbar-thumb:hover {
     background-color: #ffb3b3;
 }
 
+
 @font-face {
     font-family: 'Codec Cold Trial';
     src: url('/font/CodecColdTrial-ExtraBold.woff2') format('woff2'),
         url('/font/CodecColdTrial-ExtraBold.woff') format('woff');
-    font-weight: bold;
+    font-weight: 700;
     font-style: normal;
     font-display: swap;
 }
@@ -44,8 +51,10 @@ body::-webkit-scrollbar-thumb:hover {
     --font-open: "Open Sans", sans-serif;
     --color-primario: rgba(54, 118, 106, 1);
     --color-secundario: rgba(5, 5, 5, 1);
+    --color-secundario-transparencia: rgba(5, 5, 5, 0.85);
     --color-terciario: rgba(242, 241, 235, 0.85);
     --color-terciario-transparencia: rgba(242, 241, 235, 0.5);
+    --color-scroll: rgba(242, 241, 235, 0.3);
     --color-blanco: rgba(255, 255, 255, 1);
     --color-filtro: rgba(3, 28, 44, 1);
 }
@@ -67,8 +76,10 @@ img{
 }
 
 h1 {
-    font-family: var(--font-codec);
+    font-family: var(--font-oswald);
     font-weight: bolder;
+    width: 100%;
+    font-size: 50px;
 }
 
 h2,h3,h4,h5,h6 {
@@ -86,13 +97,16 @@ main {
 
 section {
     padding: 5% 2.5%;
-    transition: background-color 0.3s ease-in-out;
+    transition: background-color .3s ease-in-out;
     gap: 2.5%;
 }
 
 h2 {
-    text-align: center;
     margin-top: 2.5em;
+}
+
+.texto-centrado{
+    text-align: center;
 }
 
 .seccion-principal{
@@ -111,7 +125,7 @@ h2 {
     flex-direction: column;
     color: var(--color-blanco);
     text-align: left;
-    text-shadow: 0.25em 0.25em 0.5em rgba(0, 0, 0, 0.8);
+    text-shadow: .25em .25em .5em rgba(0, 0, 0, 0.8);
     position: relative;
 }
 
@@ -128,14 +142,12 @@ h2 {
 
 #inicio h1 {
     color: var(--color-cuaternario);
-    font-size: 6vw;
     position: relative;
     width: 100%;
     z-index: 2;
     margin: 0;
     margin-left: 0;
     padding: 0;
-    text-align: center;
 }
 
 #inicio p {
@@ -143,7 +155,7 @@ h2 {
     z-index: 2;
     margin-left: 0;
     padding: 0;
-    text-align: center;
+    font-size: 20px;
 }
 
 /* Estilos para la sección proyecto */
@@ -155,9 +167,13 @@ h2 {
     padding: 4%;
 }
 
-.proyecto p,.proyecto h3{
+.proyecto p{
     flex: 1;
-    margin-top: 1.875em;
+    margin-top: 5px;
+}
+
+.proyecto h3{
+    margin-bottom: 20px;
 }
 
 .proyecto li {
@@ -169,12 +185,13 @@ h2 {
     flex: 1;
     float: right;
     width: 40%;
-    padding: 30px;
+    padding: 20px;
 }
 
-.imagen1{
+.img-proyecto {
     width: 100%;
     height: auto;
+    min-width: 320px;
     max-width: 680px;
 }
 
@@ -184,19 +201,25 @@ h2 {
 
 .plastiscan{
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
-    gap: 20px;
 }
 
 .picture-plastiscan{
     width: 100%;
+    
 }
 
 .logo{
     width: 100%;
+    max-width: 350px;
     height: auto;
-    min-width: 100px;
+    float: left;
+    margin: 20px;
+}
+
+.div-plastiscan h3{
+    margin-top: 20px;
 }
 
 .aplicaciones {
@@ -210,9 +233,13 @@ h2 {
     flex-direction: column;
 }
 
+.aplicaciones h3{
+    margin-bottom: 30px;
+}
+
 .aplicaciones li {
     margin-left: 5%;
-    padding: 0.625em;
+    padding: .625em;
     list-style-type: disc;
 }
 
@@ -225,21 +252,28 @@ h3, ul {
     padding: 0;
 }
 
+.dataset{
+    font-size: 0.8em;
+    font-style: italic;
+    margin-left: 10px;
+}
 /* Estilos para la sección pruébalo */
 
 #pruebalo {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 40vh;
+    height: auto;
     width: 100%;
     justify-content: center;
-    margin-bottom: 13.5%;
+    margin-bottom: 4%;
     gap: 40px;
+    padding: 4%;
 }
 
 #pruebalo h2{
-    margin-bottom: 2em;
+    width: 100%;
+    margin: 50px;
 }
 
 #pruebalo form {
@@ -263,6 +297,10 @@ h3, ul {
 
 }
 
+#pruebalo p{
+    width: 100%;
+}
+
 input[type="submit"] {
     background-color: var(--color-primario);
     color: var(--color-blanco);
@@ -280,6 +318,58 @@ input[type="submit"]:hover{
     background-color: var(--color-filtro);
     color: var(--color-blanco);
 }
+
+.picture-pruebalo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 25px;
+}
+
+.tipo-archivo{
+    font-style: italic;
+    font-size: small;
+    margin-right: 60px;
+}
+.img-muestra{
+    width: 200px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.img-muestra:hover {
+    transform: scale(1.4); 
+}
+
+.picture-pruebalo img{
+    border-radius: 4px;
+}
+
+.subir-archivo-texto{
+    background-color: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 100px;
+}
+
+.subir-archivo{
+    width: 100%;
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+.texto-izq{
+    text-align: left;
+    text-transform: uppercase;
+    color: var(--color-primario);
+    font-weight: bold;
+    font-family: var(--font-open);
+    margin-bottom: 0;
+}
+
 
 /* Estilos para la sección Contacto */
 
@@ -339,18 +429,20 @@ input[type="submit"]:hover{
     width: 100%;
     margin: 0 auto;
     flex: 1;
-    gap: 20px;
+    gap: 10px;
 }
 
-.formulario-div{
-    width: 100%;
+.formulario-section{
+    width: 60%;
     height: auto;
+    margin: 0 auto;
 }
 
 .picture-formulario{
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: auto;
 }
 
 .minerva-logo{
@@ -364,7 +456,7 @@ input[type="submit"]:hover{
 .formulario textarea {
     display: flex;
     flex-direction: column;
-    min-width: 100%;
+    width: 100%;
     margin-bottom: 1.25em;
     color: var(--color-primario);
     background-color: var(--color-terciario-transparencia);
@@ -376,16 +468,12 @@ input[type="submit"]:hover{
     cursor: pointer;
 }
 
-.imagen1 {
+.formulario button{
+    padding: 10px;
     width: 100%;
+    opacity: 0.9;
+    color: var(--color-blanco);
 }
-
-.logo {
-    
-    height: auto;
-    max-width: 350px;
-}
-
 /* Estilos para la sección Nosotras */
 
 #nosotras {
@@ -398,7 +486,8 @@ input[type="submit"]:hover{
 }
 
 #nosotras p {
-    margin: 1em;
+    margin-left: 25px;
+    width: 100%;
 }
 
 #nosotras h2 {
@@ -411,12 +500,20 @@ input[type="submit"]:hover{
     padding: 3em;
 }
 
-.texto-resaltado {
-    color: var(--color-primario);
-    font-family: var(--font-open);
-    font-weight: bold;
+.picture-nosotras{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 96%;
 }
 
+.picture-nosotras img{
+    width: 100%;
+    max-width: fit-content;
+    border-radius: 4px;
+    opacity: 0.9;
+}
 
 /* Estilos para el footer */
 
@@ -447,6 +544,19 @@ footer {
     color: var(--color-primario);
 }
 
+.footer-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-item {
+    font-size: 15px;
+    color: darkgray;
+    font-style: italic;
+}
+
+
 /* Estilos responsive . Estilos barra de navegación */
 
 header{
@@ -470,8 +580,10 @@ header{
 
 .nav-links li a{
     text-decoration: none;
-    color: var(--color-secundario);
-    font-family: var(--font-open), sans-serif;
+    color: var(--color-secundario-transparencia);
+    font-family: var(--font-open);
+    font-weight: 450;
+    font-size: 17px;
     margin: 0 0.5em;
     transition: color 0.1s ease-in-out;
 }
@@ -487,7 +599,7 @@ header{
 
 /*Estilos responsive y menú hamburguesa*/
 
-@media screen and (max-width:550px){
+@media screen and (max-width:700px){
     
     .abrir-menu, .cerrar-menu{
         display: block;
@@ -538,6 +650,98 @@ header{
         font-family: var(--font-open);
         color: var(--color-blanco);
     }
-
-
 }
+
+@media screen and (max-width:700px) {
+    .proyecto {
+        display: flex;
+        flex-direction: column;
+        font-size: 1em;
+        line-height: 2;
+        padding: 4%;
+    }
+
+    .picture-proyecto {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding: 30px;
+    }
+
+    .img-proyecto {
+        width: 100%;
+        height: auto;
+        max-width: 300px;
+    }
+
+    .plastiscan {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .picture-plastiscan {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .logo {
+        width: 100%;
+        height: auto;
+        max-width: 300px;
+    }
+
+    .aplicaciones {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .aplicaciones ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .aplicaciones li {
+        margin-top: 20px;
+        margin-left: 5%;
+        list-style-type: disc;
+    }
+
+    #nuestro-proyecto {
+        margin-bottom: 5em;
+    }
+
+    h3,
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    h3 {
+        text-align: center;
+    }
+
+    .oculto {
+        display: none;
+    }
+
+    .formulario {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .formulario-section {
+        width: 100%;
+    }
+
+    .picture-pruebalo{
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        margin: 5px;
+        align-items: flex-start;
+    }
+}
+
