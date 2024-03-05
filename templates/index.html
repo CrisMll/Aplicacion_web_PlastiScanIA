@@ -27,6 +27,7 @@
 </head>
 
 <body>
+
     <header>
         <img class="minerva-logo" src="/static/imagenes/minervaLOGO.png" alt="logo de Minerva Dev Team">
         <button class="abrir-menu" id="abrir"><i class="bi bi-list"></i></button>
@@ -42,112 +43,139 @@
     </header>
 
     <section id="inicio">
-        <h1>Unlock the ocean secrets</h1>
-        <p>Descubre y clasifica los microplásticos con nuestra aplicación.<br/>
-            ¡Por un mundo sin contaminación!</p>
+        <h1 class="texto-centrado">PlastiScan IA</h1>
+        <p class="texto-centrado">Clasificación de microplásticos con Machine Learning</p>
     </section>
     <main>
         <section id="nuestro-proyecto" class="seccion-principal">
-            <h2 class = "proyecto-h2">NUESTRO PROYECTO</h2>
+            <h2 class = "texto-centrado proyecto-h2">PROYECTO PLASTISCAN</h2>
             <article class="proyecto">
                 <picture class="picture-proyecto">
-                    <img class = "imagen1" src="/static/imagenes/image.png" alt="Imagen de un planeta con contaminación en los océanos">
+                    <img class = "img-proyecto" src="/static/imagenes/image.png" alt="Imagen de un planeta con contaminación en los océanos">
                 </picture>
                 <p>
-                    La contaminación del océano es una crisis global que requiere atención inmediata y medidas
-                    significativas para preservar la salud de nuestros mares y la biodiversidad marina. 
-                    La problemática de los microplásticos se ha convertido en un problema que demanda una respuesta inmediata y acciones concretas para preservar la pureza de nuestros océanos. 
-                    En los últimos años, hemos sido testigos de un aumento alarmante en la presencia de diminutas partículas plásticas dispersas por los mares, representando una amenaza directa para la vida marina
-                    y, en última instancia, para la salud del ecosistema acuático.<br/>
-                    La magnitud de este problema se hace evidente al descubrir concentraciones significativas de microplásticos, tanto en la superficie del agua como en las profundidades marinas.<br/>
-                    Estos microplásticos resultan de la descomposición de elementos plásticos más grandes y de la liberación de microesferas presentes en productos de cuidado personal, difundiéndose por los océanos. 
-                    Su persistencia y capacidad para acumular contaminantes químicos las convierten en una amenaza especialmente peligrosa para la vida marina.
-                    La educación y la concienciación pública desempeñan un papel fundamental en la lucha contra la contaminación del océano.
+                    La contaminación por microplásticos es una de las principales preocupaciones ambientales a nivel mundial, 
+                    y los océanos son especialmente vulnerables debido a la acumulación continua de residuos plásticos. 
+                    La fragmentación de plásticos más grandes en partículas más pequeñas es un fenómeno preocupante que puede tener efectos devastadores
+                    en la vida masectionen los ecosistemas acuáticos en general.
+                </P>
+                <P>    
+                    Según un estudio publicado en la revista científica Environmental Science & Technology, se estima que hay entre 15 y 51 billones de partículas
+                    de microplásticos flotando en los océanos del mundo. Poder clasificarlos de manera ágil es el punto de partida para elaborar estrategias que nos
+                    permitan avanzar en la lucha frente a este tipo de contaminantes.
                 </p>
+                <P>
+                    La detección y clasificación son pasos fundamentales para implementar medidas efectivas de mitigación. En el contexto de la
+                    detección de microplásticos en imágenes, o Redes Neuronales Convolucionales, se pueden entrenar modelos CNN para reconocer 
+                    patrones visuales específicos asociados con microplásticos en imágenes de muestras de agua.
+                    Estos modelos pueden ser capaces de distinguir entre microplásticos y otros objetos o materiales presentes en la muestra, 
+                    lo que permite una detección precisa y eficiente. 
+                </P>
                 
             </article>
 
             <article class="proyecto plastiscan">
-                <picture class = "picture-plastiscan">
-                    <img class = "logo" src="/static/imagenes/plastiscan_logo.png" title="PlastiScan Logo"
-                        alt="imagen del logo de PlastiScan">
-                </picture>
                 <div class="div-plastiscan">
-                    <h3>PLASTISCAN</h3>
+                    <picture class = "picture-plastiscan">
+                        <img class = "logo" src="/static/imagenes/plastiscan_logo.png" title="PlastiScan Logo"
+                            alt="imagen del logo de PlastiScan">
+                    </picture>
+                    <h3 class="oculto">PLASTISCAN</h3>
                     <p>
-                        El propósito de nuestra iniciativa es desarrollar un sistema de IA integrando un modelo de
-                        aprendizaje profundo,
-                        a través del análisis exploratorio de datos y el filtrado de imágenes, Plastiscan ayuda a
-                        identificar y clasificar
-                        distintos tipos de microplásticos en el entorno marino presente en las imágenes aportadas.
+                        PlastiScan nace como una herramienta para la investigación, con el objetivo de ayudar a comprender cómo y a qué niveles afecta la contaminación por microplásticos,
+                        controlar las fuentes de contaminación más habituales o entender cómo se degradan en partículas cada vez más pequeñas a lo largo del tiempo.
                     </p>
-                </div>
+                    <P>
+                        Ponemos nuestro proyecto a disposición de investigadores, organismos y cualquier entidad que quiera avanzar en este mismo sentido,
+                        por eso lo compartimos bajo licencia Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0), 
+                        que permite compartir y adaptar el material siempre que se reconozca a las autoras originales, no se utilice comercialmente y se distribuyan
+                        las obras derivadas bajo la misma licencia.<br/>
+                        <span class="dataset">El dataset utilizado se ha descargado de https://corp.pirika.org/en/public-survey-results/.</span>
+                    </p>
+                </div>  
             </article>
 
             <article class="proyecto aplicaciones">
                 <h3>APLICACIONES</h3>
+                <p>
+                    Los objetivos específicos del proyecto incluyen el diseño y la implementación de una
+                    Red Neuronal Convolucional para la clasificación precisa de microplásticos a partir de imágenes microscópicas.<br/>
+                    Las posibles aplicaciones de la tecnología desarrollada son diversas:
+                </p>
+                    
                 <ul>
-                    <li>Esfuerzos de limpieza de océanos: Permite identificar y localizar la contaminación por
-                        microplásticos en muestras de agua del océano.</li>
-                    <li>Mejoras en Instalaciones de reciclaje: identificar y clasificar los residuos de microplásticos
-                        en los materiales, asegurando su adecuada eliminación o tratamiento.</li>
-                    <li>Investigación de microplásticos: estudio del impacto de los microplásticos en los ecosistemas y
-                        la salud humana al automatizar la detección y el análisis de microplásticos en diversas muestras
-                        como agua, suelo o aire.</li>
+                    <li>Utilización en la monitorización ambiental para evaluar 
+                        la contaminación por microplásticos en diferentes cuerpos de agua.</li>
+                    <li>Aplicación en la investigación científica para estudiar los efectos de
+                        los microplásticos en los ecosistemas acuáticos.</li>
+                    <li>Gestión de residuos para identificar fuentes y rutas de contaminación.</li>
                     <li>Educación y concienciación: Desarrollar una aplicación móvil utilizando el modelo que permita a
-                        los usuarios identificar la posible contaminación por microplásticos en productos de consumo.
+                        los usuarios identificar la posible contaminación por microplásticos.
                     </li>
                 </ul>
             </article>
         </section>
+
         <section id="pruebalo" class="seccion-principal">
-            <h2>SUBE TU ARCHIVO</h2>
-            <p>Realiza una prueba sin compromiso de nuestro sistema. Sube una imagen de muestra y será procesada por nuestro
-                modelo.</p>
-            <div class="subir-archivo">
-                <form action="/predict" method="post" enctype="multipart/form-data">
+            <h2 class="texto-centrado">CLASIFICA TU IMAGEN</h2>
+            <p class="texto-centrado">
+                Experimenta con nuestro modelo y clasifica tu imagen usando PlastiScan IA
+            </p>  
+            <section class="subir-archivo-texto">     
+                <form class="subir-archivo" action="/predict" method="post" enctype="multipart/form-data">
                     <input type="file" name="file" accept=".png, .jpg, .jpeg, .gif" required>
+                    <p class="texto-centrado tipo-archivo">Formatos de imagen permitidos* : jpg , jpeg , png , gif</p>
                     <button type="submit" class="btn btn-outline-success">Predecir</button>
                 </form>
-            </div>
+            </section>
+            
+            <picture class="picture-pruebalo">
+                <P class="tipo-archivo">
+                    * Para que el modelo funcione de la manera más precisa, sube tu imagen con medidas 300x300px.<br/>
+                    Es recomendable incluir una referencia a la escala de la fotografía en un lado de la imagen,<br/>
+                    incorporando en un lado de la imagen una línea que represente la medida de sí misma en el mundo real, de esta manera:
+                </P>
+                <img class="img-muestra" src="/static/imagenes/muestra.jpg" alt="muestra de imagen" >
+            </picture>
         </section>
 
         <section id="nosotras" class="seccion-principal">
-            <h2>NOSOTRAS</h2>
+            <h2 class="texto-centrado">MINERVA DEV TEAM</h2>
+            <picture class = "picture-nosotras">
             <p>
-                Somos <span class="texto-resaltado">Minerva Dev Team</span>.<br/>Elegimos este nombre porque en la
-                mitología romana, Minerva es la diosa de la sabiduría, las artes, la
-                estrategia, la justicia, la educación y el desarrollo.<br/>
-                Es considerada una de las principales deidades femeninas del panteón romano.
-                Admiramos la figura de esta diosa en las leyendas y mitos de la antigua Roma, en la cual se le atribuyen
-                importantes méritos como
-                la educación de Rómulo y Remo, los fundadores de la ciudad.
+                Somos un equipo de trabajo multidisciplinar que se formó para elaborar el Proyecto Final del I DIPLOMA DE EXTENSIÓN UNIVERSITARIA
+                EN INTELIGENCIA ARTIFICIAL AVANZADA SAMSUNG INNOVATION CAMPUS (2023-24) de la Universidad de Málaga, que aborda de manera intensiva el aprendizaje de programación con Python,
+                matemáticas para la ciencia de datos, estadística y desarrollo de aplicaciones basadas en diferentes ramas del Machine Learning.
             </p>
-
-            <picture class = "nosotras-img">
+            <p>
+                Elegimos este nombre porque en la mitología romana, Minerva es la diosa de la sabiduría, las artes, la estrategia, la justicia, la educación y el desarrollo.
+                Es considerada una de las principales deidades femeninas del panteón romano. Admiramos la figura de esta diosa en las leyendas y mitos de la antigua Roma, 
+                en la cual se le atribuyen importantes méritos como la educación de Rómulo y Remo, los fundadores de la ciudad.
+            </p>
+            
                 <img src="/static/imagenes/nosotras.png" alt="Minerva Dev Team">
             </picture>
-
         </section>
 
         <section id="contacto" class="seccion-principal">
-            <h2>CONTACTO</h2>
+            <h3 class="texto-centrado">CONTACTA CON EL EQUIPO PLASTISCAN</h3>
 
             <section class = "seccion-email">
                 <p>
-                    Puedes contactar con nosotras escribiéndonos un email a esta dirección, o bien a través del
+                    Puedes contactarnos escribiendo un email a esta dirección, o bien a través del
                     formulario más abajo:
                 </p>
-                <div class = "contenedor-email">
+                <section class="contenedor-email">
                     <label for="email-copia">Email:</label>
-                    <a href="mailto:hola@plastiscan.org">hola@plastiscan.org</a> 
-                    <button id = "boton-mail" title="Copiar Email" onclick="copiarEmail()"><img src="/static/imagenes/copy.png"
-                            alt="imagen portapapeles"></button>
-                </div>
+                    <a href="mailto:plastiscania@gmail.com" id="email-copia">plastiscania@gmail.com</a>
+                    <button id="boton-mail" title="Copiar Email" onclick="copiarEmail()">
+                        <img src="/static/imagenes/copy.png" alt="imagen portapapeles">
+                    </button>
+                </section>
             </section>
 
             <section class = "formulario">
-                <div class= "formulario-div">
+                <section class= "formulario-section">
                     <form action="/contacto" method="post">
                         <label for="nombre">Nombre completo:</label>
                         <input type="text" id="nombre" name="nombre" maxlength="80" required>
@@ -159,22 +187,44 @@
                         <input type="text" id="asunto" name="asunto" required>
 
                         <label for="mensaje">Mensaje:</label>
-                        <textarea id="mensaje" name="mensaje" cols="50" rows="20" maxlength="400" required></textarea>
+                        <textarea id="mensaje" name="mensaje" cols="40" rows="20" maxlength="400" required></textarea>
 
-                        <input type="submit" value="Enviar">
+                        <button class="btn btn-success" type="submit" value="Enviar"> Enviar </button>
                     </form>
-                </div>
+                </section>
                 <picture class="picture-formulario">
                     <img class = "minerva-logo" src="/static/imagenes/minervaICON.png" alt="imagen logotipo de minerva dev team">
                 </picture>
             </section>
+
+            <section class="privacidad">
+                <ul class="footer-list">
+                    <li class="footer-item">- Política de Privacidad:
+                        En Plastiscan, respetamos tu privacidad. No recopilamos información personal, no hay necesidad de registrarse ni recabamos datos de quienes visitan nuestra web. Tus datos son tuyos y no los compartiremos ni venderemos a terceros.
+                    </li>
+                    <li class="footer-item">- Política de Cookies:
+                        Utilizamos las cookies estándar de tu navegador para mejorar tu experiencia en Plastiscan. No realizamos seguimiento activo ni recopilamos información adicional mediante cookies. Puedes gestionar tus preferencias de cookies desde la configuración de tu navegador.
+                    </li>
+                    <li class="footer-item">- Términos de Uso:
+                        Te damos la bienvenida a Plastiscan, un proyecto del Minerva Dev Team. Al acceder y utilizar nuestra web, aceptas que la información proporcionada es para fines informativos y educativos. La reproducción con fines lucrativos está prohibida, ya que todo el contenido está bajo licencia Creative Commons.
+                    </li>
+                    <li class="footer-item">- Licencia Creative Commons:
+                        Todo el contenido en Plastiscan está protegido bajo la licencia Creative Commons. Puedes compartir, copiar y distribuir el material siempre y cuando se otorgue crédito al Minerva Dev Team, pero no se permite su uso con fines lucrativos. Más información sobre nuestra licencia se encuentra disponible en la sección correspondiente.
+                    </li>
+                    <li class="footer-item">- Créditos:
+                        Todas las imágenes han sido creadas con la tecnología DALL-E.
+                    </li>
+                </ul>
+            </section>
+
     </main>
     <footer>
+        
         <p>&copy; Minerva Dev Team 2024</p>
         <nav class = "redes">
             <ul>
-                <li><a href="mailto:hola@plastiscan.org"><i class="bi bi-envelope-at-fill"> contacta </i></a></li>
-                <li><a href=""><i class="bi bi-github"></i></a></li>
+                <li><a href="mailto:plastiscania@gmail.com" target="_blank"><i class="bi bi-envelope-at-fill"> contacta </i></a></li>
+                <li><a href="https://github.com/Minerva-Dev-Team" target="_blank"><i class="bi bi-github"></i></a></li>
             </ul>
         </nav>
     </footer>
@@ -190,5 +240,7 @@
     </script>
 
 </body>
+
+<!-- -->
 
 </html>
