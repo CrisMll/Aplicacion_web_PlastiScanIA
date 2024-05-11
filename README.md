@@ -2,6 +2,9 @@
 
 <p align="center"><img src="https://plastiscan.org/static/imagenes/plastiscan_logo.png" alt="logo de plastiscan" width="300px"></p>
 
+ACCEDE A LA WEB:
+* www.plastiscan.org
+
 Este repositorio incluye los archivos de la aplicación web del proyecto PlastiScan IA.
 La aplicación web forma parte del trabajo realizado como proyecto final del Diploma de Extensión Universitaria de Inteligencia Artificial Avanzada 2023 - 2024 impartido por Samsung Innovation Campus y la Universidad de Málaga.<br/>
 
@@ -9,8 +12,6 @@ La aplicación web forma parte del trabajo realizado como proyecto final del Dip
 PlastiScan IA es un modelo de Redes Neuronales Convolucionales creado para reconocer patrones visuales específicos asociados con microplásticos en imágenes de muestras de agua. Nace como una herramienta para la investigación, con el objetivo de ayudar a comprender cómo y a qué niveles afecta la contaminación por microplásticos, controlar las fuentes de contaminación más habituales o entender cómo se degradan en partículas cada vez más pequeñas a lo largo del tiempo.
 
 Además de la creación y entrenamiento del modelo, decidimos integrarlo en una aplicación web para poder mostrar nuestro trabajo y que cualquiera pudiera probarlo por sí mismo con sus propias imágenes de muestra.
-
-* Puedes acceder a la web en www.plastiscan.org
 
 
 ## Tecnologías utilizadas en la web
